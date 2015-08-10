@@ -1,0 +1,119 @@
+<!-- <%= data %> -->
+<div>
+<a href="/" class="btn btn-danger"><b><</b> Search Again</a>
+</div>
+
+<div class="text-center">
+  <h2 class="well"><b class="btn-default well disabled"><%= data.Title %></b></h2>
+   <b>IMDB Rating:</b><br>
+    <% for (var i = 0; i < Math.round(data.imdbRating); i++) { %>
+      <img class="" style="width:8%;" src="http://84d1f3.medialib.glogster.com/jfritz56/media/00/008f3e66ab1928241ba21e93cf0c4eca3f8d177a/gold-metal-star.png">
+    <% }; %><br>
+    <b>RT Rating:</b><br>
+    <% for (var i = 0; i < Math.round(data.tomatoRating); i++) { %>
+      <img class="" style="width:8%;" src="http://84d1f3.medialib.glogster.com/jfritz56/media/00/008f3e66ab1928241ba21e93cf0c4eca3f8d177a/gold-metal-star.png">
+    <% }; %><br>
+  <table class="table btn-default active table-hover">
+    <thead>
+      <tr>
+        <th class="text-center">
+          <h4>MPAA Rated:</h4>
+          <%= data.Rated %>
+        </th>
+        <th class="text-center">
+          <h4>Relase Date:</h4>
+          <%= data.Released %>
+        </th>
+        <th class="text-center">
+          <h4>Runtime:</h4>
+          <%= data.Runtime %>
+        </th>
+        <th class="text-center">
+          <h4>Language:</h4>
+          <%= data.Language %>
+        </th>
+        <th class="text-center">
+          <h4>Genre:</h4>
+          <%= data.Genre %>
+        </th>
+      </tr>
+    </thead>
+  </table>
+  <hr>
+  <table class="table btn-default active">
+    <thead>
+      <tr>
+        <th class="text-center">
+          <div class="dropdown">
+            <button class="btn-default active dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <h4>Director
+              <span class="caret"></span>
+              </h4>
+            </button>
+            <ul class="dropdown-menu btn-default active well" aria-labelledby="dropdownMenu1">
+              <li class="text-center"><%= data.Director %></li>
+            </ul>
+          </div>
+        </th>
+        <th class="text-center">
+          <div class="dropdown">
+            <button class="btn-default active dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <h4>Writers
+              <span class="caret"></span>
+              </h4>
+            </button>
+            <ul class="dropdown-menu btn-default active well" aria-labelledby="dropdownMenu1">
+              <li class="text-center"><%= data.Writer %></li>
+            </ul>
+          </div>
+        </th>
+        <th class="text-center">
+          <div class="dropdown">
+            <button class="btn-default active dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <h4>Notable Awards
+              <span class="caret"></span>
+              </h4>
+            </button>
+            <ul class="dropdown-menu btn-default active well" aria-labelledby="dropdownMenu1">
+              <li class="text-center"><%= data.Awards %></li>
+            </ul>
+          </div>
+        </th>
+        <th class="text-center">
+          <div class="dropdown">
+            <button class="btn-default active dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <h4>Notable Actors
+              <span class="caret"></span>
+              </h4>
+            </button>
+            <ul class="dropdown-menu btn-default active well" aria-labelledby="dropdownMenu1">
+              <li class="text-center">
+              <% data.Actors.split(',').forEach(function(e){ %>
+                <li class="text-center"><%= e %></li><br>
+              <% }) %>
+              </li>
+            </ul>
+          </div>
+        </th>
+      </tr>
+    </thead>
+  </table>
+
+  <div class="">
+
+    <div class="well btn-default active"><u><b>Rotten Tomatoes Quick Review:</b></u><br>
+    <%= data.tomatoConsensus %>
+    </div>
+  </div>
+  <ul class="list-group active well">
+    <li class="text-center well btn-default disabled list-group-item">
+      <h2><b>Poster:</b></h2>
+      <img class="btn-default active btn " src="<%= data.Poster %>"><br>
+      <h3>
+        <b>Plot Summary:</b>
+      </h3><br>
+      <b><%= data.Plot %></b>
+    </li>
+  </ul>
+</div>
+<a href="/" class="btn btn-danger"><b><</b> Search Again</a>

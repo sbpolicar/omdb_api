@@ -1,0 +1,11 @@
+<a href="/" class="btn btn-danger"><b><</b> Search Again</a>
+
+<h3>Search Results</h3><hr>
+<div class="jumbotron btn-default disabled">
+  <% results.forEach(function(i){ %>
+  <div class="well btn-default active">
+    <a  href="show/<%= i.imdbID %>"><h3><%= i.Title %></h3><h5>(<%= i.Year %>)</h5></a>
+  </div>
+  <% }) %>
+</div>
+<a href="/" class="btn btn-danger"><b><</b> Search Again</a>
