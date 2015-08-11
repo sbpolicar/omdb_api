@@ -1,8 +1,11 @@
 <!-- <%= data %> -->
-<div>
+<div class="text-center">
 <a href="/" class="btn btn-danger"><b><</b> Search Again</a>
 <a href="/favorites" class="btn btn-info">myFavorites</a>
-</div>
+<% if(favorite){ %>
+  <button class="btn btn-warning disabled">Favorited!</button>
+  <a class="btn btn-success" href="/favorites/<%= favorite.get().imdbId %>/comments">Comment</a>
+<% } else { %>
 <form action="/favorites" method="POST" role="form">
   <div class="form-group">
     <input name="title" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Title %>">
@@ -12,6 +15,8 @@
   </div>
   <button type="submit" class="btn btn-success">Favorite This</button>
 </form>
+<% } %>
+</div>
 
 
 <div class="text-center">
@@ -128,13 +133,14 @@
   </ul>
   <h2>Comments</h2>
   <div class="btn-primary disabled well">
-  <% if(typeof showComments != undefined) { %>
-    <ul>
-      <% showComments.forEach(function(comment) { %>
-      <li><%= comment.body %></li>
-      <% }) %>
-    </ul>
-  <% } %>
+
+<% if(favorite){ %>
+  <% showComments.forEach(function(comment){ %>
+    <li><%= comment.body %></li>
+  <%  }) %>
+<% } %>
+
+
 
   </div>
 </div>
