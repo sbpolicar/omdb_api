@@ -1,0 +1,19 @@
+<form action="comments/post" method="POST" role="form">
+  <legend>Add a Comment to <%= favorites[0].title %></legend>
+  <div class="form-group">
+    <textarea name="comment" type="text" class="form-control"></textarea>
+    <input name="id" type="hidden" class="form-control" placeholder="Input field" value="<%= favorites[0].id  %>">
+    <input name="imdbId" type="hidden" class="form-control" placeholder="Input field" value="<%= favorites[0].imdbId  %>">
+
+  </div>
+  <div class="text-center">
+  <button type="submit" class="btn btn-success">Post Comment</button>
+    <a href="/" class="btn btn-danger"><b><</b> Search Again</a>
+    <a href="/favorites" class="btn btn-info">myFavorites</a>
+    </div>
+</form>
+
+<h2>Comments:</h2>
+<% show.forEach(function(comment){ %>
+  <li><%= comment.body %></li>
+<% }) %>

@@ -1,0 +1,37 @@
+<h1>Favorites</h1>
+<div>
+  <a href="/" class="btn btn-danger"><b><</b> Search Again</a>
+</div>
+<table class="table table-condensed">
+  <tbody>
+    <% favoritesList.forEach(function(favorite){ %>
+      <tr>
+        <td>
+            <div class="text-center">
+              <%= favorite.title %><br>
+              <%= favorite.year %><br>
+              <a href="/show/<%= favorite.imdbId %> ">
+                <img style="width:20%;" src="<%= favorite.poster %>"><br>
+              <a class="btn btn-success" href="/favorites/<%= favorite.imdbId %>/comments">Comment</a>
+              <form method="Post" action="favorites/<%= favorite.imdbId %>?_method=delete">
+              <input type="submit" class="btn btn-danger" value="Unfavorite">
+              </form>
+            </div>
+          </a>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+<div>
+  <a href="/" class="btn btn-danger"><b><</b> Search Again</a>
+</div>
+
+
+
+
+
+
+
+
+
