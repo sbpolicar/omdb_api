@@ -1,7 +1,18 @@
 <!-- <%= data %> -->
 <div>
 <a href="/" class="btn btn-danger"><b><</b> Search Again</a>
+<a href="/favorites" class="btn btn-info">myFavorites</a>
 </div>
+<form action="/favorites" method="POST" role="form">
+  <div class="form-group">
+    <input name="title" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Title %>">
+    <input name="id" type="hidden" class="form-control" placeholder="Input field" value="<%= id %>">
+    <input name="poster" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Poster %>">
+    <input name="year" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Year %>">
+  </div>
+  <button type="submit" class="btn btn-success">Favorite This</button>
+</form>
+
 
 <div class="text-center">
   <h2 class="well"><b class="btn-default well disabled"><%= data.Title %></b></h2>
@@ -115,5 +126,16 @@
       <b><%= data.Plot %></b>
     </li>
   </ul>
+  <h2>Comments</h2>
+  <div class="btn-primary disabled well">
+  <% if(typeof showComments != undefined) { %>
+    <ul>
+      <% showComments.forEach(function(comment) { %>
+      <li><%= comment.body %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  </div>
 </div>
 <a href="/" class="btn btn-danger"><b><</b> Search Again</a>
