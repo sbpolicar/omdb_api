@@ -22,4 +22,11 @@ app.get("/", function(req, res) {
     res.render("main/index")
 });
 
+app.get("/tags", function(req,res){
+  db.tag.findAll().then(function(tags){
+
+  res.render("tags/index", {tags:tags})
+  })
+});
+
 app.listen(3000);

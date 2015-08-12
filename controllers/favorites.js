@@ -20,9 +20,16 @@ router.delete("/:id", function(req,res){
 })
 
 router.get("/", function(req,res){
-  db.favorite.findAll().then(function(favorites){
-  res.render('favorites/index', {favoritesList:favorites});
+  if(req.query.q){db.tag.find({where:{name:req.query.q}, include: db.favorite}).then(function(tag){
+      res.render('favorites/index', {favoritesList:tag.favorites});
   })
+  }else{
+    db.favorite.findAll().then(function(favorites){
+      res.render('favorites/index', {favoritesList:favorites});
+    })
+  }
 });
+
+
 
 module.exports = router;

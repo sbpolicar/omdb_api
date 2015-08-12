@@ -17,7 +17,7 @@ router.get("/show/:id", function(req,res){
   var url = 'http://www.omdbapi.com/?i='+showTerm+'&plot=full&r=json&tomatoes=true';
   request(url, function(error, response, data){
     var data = JSON.parse(data)
-    db.favorite.find({where:{imdbId:showTerm}}).then(function(movie){
+    db.favorite.find({where:{imdbId:showTerm}, include:[db.tag]}).then(function(movie){
       if(!movie){
         res.render("main/show", {data: data, id:showTerm, favorite:movie});
       }else{
@@ -26,15 +26,6 @@ router.get("/show/:id", function(req,res){
         })
       }
     })
-    // if(db.favorite.findAll({where:{imdbId:req.params.id}})===true){
-    // db.favorite.findAll({where:{imdbId:req.params.id}}).then(function(movie){
-    //   db.comment.findAll({where:{favoriteId:movie[0].id.toString()}}).then(function(show){
-    //   res.render("main/show", {data: data, id:showTerm, showComments:show});
-    //   });
-    // });
-    // }else{
-    //   res.render("main/show", {data: data, id:showTerm});
-    // }
   });
 });
 

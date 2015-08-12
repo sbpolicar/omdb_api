@@ -1,0 +1,4 @@
+<h2>Filter myFavorites by Tag:</h2><hr>
+<% tags.forEach(function(tag){ %>
+  <a href="/favorites/?q=<%= tag.name %>"><li><%= tag.name %></li></a>
+<% }) %>

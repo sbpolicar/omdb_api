@@ -1,0 +1,28 @@
+<div class="well btn-primary disabled">
+  <p>
+  <% if(tags.length > 1){ %>
+  <%= title %> has the tags:
+    <ul>
+      <% tags.forEach(function(tag){ %>
+        <li><%= tag.name %></li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+  <%= title %> has no tags yet.
+  <% } %>
+  </p>
+</div>
+<form action="tags/post" method="POST" role="form">
+  <legend>Add a Tag for <%= title %>:</legend>
+  <div class="form-group">
+    <input name="tag" type="text" class="form-control" placeholder="Examples:  Comedy, Romantic, Action">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+
+
+
+
