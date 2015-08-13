@@ -1,4 +1,7 @@
-<h2>Filter myFavorites by Tag:</h2><hr>
-<% tags.forEach(function(tag){ %>
-  <a href="/favorites/?q=<%= tag.name %>"><li><%= tag.name %></li></a>
-<% }) %>
+<a href="tags/add" class="pull-right btn btn-info">Add a Tag</a>
+<h2>View myFavorites by Tag:</h2><hr>
+<div class="well">
+  <% tags.forEach(function(tag){ %>
+    <a class="no-decoration btn-default" style="font-size:<%= tag.favorites.length %>em" href="/favorites/?q=<%= tag.name %>"><%= tag.name %><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></a>
+  <% }) %>
+</div>

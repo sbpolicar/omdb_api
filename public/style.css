@@ -1,3 +1,51 @@
 .nav-style{
-  border-bottom: solid #374350 5px !important;
+  border: solid rgba(55, 67, 80, 0.5) 3px !important;
+  background-image: url('http://wallpaperspics.com/wallpapers/26/8/simple-blue-gradient-262968.jpg');
+  background-color: rgba(0,0,0,0.5);
+  background-size: 100% 2000%;
+  background-position: center;
 }
+
+body{
+  background-image: url('http://wallpaperspics.com/wallpapers/26/8/simple-blue-gradient-262968.jpg');
+  background-size: 100% 300%;
+  background-position: top;
+
+}
+
+.main-bg{
+  border: solid #374350 3px !important;
+  background-image: url('http://wallpaperspics.com/wallpapers/26/8/simple-blue-gradient-262968.jpg');
+  background-size: 120% 150%;
+  background-position: center;
+  box-shadow: 0 0 100px 100px;
+}
+
+.btn{
+  border: solid rgba(55, 67, 80, 0.5) 3px !important;
+  box-shadow: 0, 0, 1em black;
+
+}
+
+a{
+  color: white !important;
+}
+
+.no-decoration{
+  text-decoration: none !important;
+}
+
+.input-style{
+  opacity: 0.5;
+}
+
+.input-style:hover{
+  opacity: 1;
+}
+
+.input-style:focus{
+  opacity: 1;
+}
+
+
+

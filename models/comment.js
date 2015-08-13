@@ -2,7 +2,16 @@
 module.exports = function(sequelize, DataTypes) {
   var comment = sequelize.define('comment', {
     favoriteId: DataTypes.INTEGER,
-    body: DataTypes.STRING
+    body: {
+      type: DataTypes.STRING,
+      validate: {
+        len:{
+          args: [20, 200],
+          msg: " Comment entries must be between 20 and 200 characters."
+        }
+      }
+    }
+
   }, {
     classMethods: {
       associate: function(models) {

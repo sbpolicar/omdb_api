@@ -1,0 +1,12 @@
+<form action="add/post" method="POST" role="form">
+  <legend>Add a Tag:</legend>
+  <div class="form-group">
+    <input name="tag" type="text" class="form-control" placeholder="Examples:  Comedy, Romantic, Action">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br><br>
+<p>Tags:</p>
+<% tags.forEach(function(tag){ %>
+  <li><%= tag.name %></li>
+<% }) %>

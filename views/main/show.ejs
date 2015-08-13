@@ -2,8 +2,8 @@
 <div class="text-center">
 <a href="/favorites" class="btn btn-info">myFavorites</a>
 <% if(favorite){ %>
-  <button class="btn btn-warning disabled">Favorited!</button>
-  <a class="btn btn-success" href="/favorites/<%= favorite.get().imdbId %>/comments">Comment</a>
+  <button class="btn btn-default disabled">Favorited!</button>
+  <a class="btn btn-info" href="/favorites/<%= favorite.get().imdbId %>/comments">Comment</a>
 <a class="btn btn-warning" href="/favorites/<%= favorite.get().imdbId %>/tags"><b>+ </b>Add a Tag</a>
 <% } else { %>
 <form action="/favorites" method="POST" role="form">
@@ -20,7 +20,7 @@
 
 
 <div class="text-center">
-  <h2 class="well"><b class="btn-default well-sm disabled"><%= data.Title %></b></h2>
+  <h2 class=""><b class=""><%= data.Title %></b></h2>
    <b>IMDB Rating:</b><br>
     <% for (var i = 0; i < Math.round(data.imdbRating); i++) { %>
       <img class="" style="width:8%;" src="http://84d1f3.medialib.glogster.com/jfritz56/media/00/008f3e66ab1928241ba21e93cf0c4eca3f8d177a/gold-metal-star.png">
@@ -149,8 +149,8 @@
 
 <a href="/favorites" class="btn btn-info">myFavorites</a>
 <% if(favorite){ %>
-  <button class="btn btn-warning disabled">Favorited!</button>
-  <a class="btn btn-success" href="/favorites/<%= favorite.get().imdbId %>/comments">Comment</a>
+  <button class="btn btn-default disabled">Favorited!</button>
+  <a class="btn btn-info" href="/favorites/<%= favorite.get().imdbId %>/comments">Comment</a>
 <a class="btn btn-warning" href="/favorites/<%= favorite.imdbId %>/tags"><b>+ </b>Add a Tag</a>
 <% } else { %>
 <form action="/favorites" method="POST" role="form">
