@@ -7,9 +7,9 @@
 }
 
 body{
-  background-image: url('http://wallpaperspics.com/wallpapers/26/8/simple-blue-gradient-262968.jpg');
+  /*background-image: url('http://wallpaperspics.com/wallpapers/26/8/simple-blue-gradient-262968.jpg');*/
   background-size: 100% 300%;
-  background-position: top;
+  background-position: bottom;
 
 }
 
@@ -45,6 +45,11 @@ a{
 
 .input-style:focus{
   opacity: 1;
+}
+
+.user-active{
+  border: solid rgba(55, 67, 80, 0.5) 3px !important;
+
 }
 
 

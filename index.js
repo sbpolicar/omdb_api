@@ -43,6 +43,8 @@ app.use(function(req,res,next){
 
 app.use('/favorites', require('./controllers/favorites.js'))
 app.use('/', require('./controllers/movies.js'))
+app.use('/auth',require('./controllers/auth.js'));
+
 
 app.get("/", function(req, res) {
     res.render("main/index")

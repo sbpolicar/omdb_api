@@ -16,9 +16,17 @@
         </div>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/">Home</a></li>
-        <li><a href="/favorites">Favorites</a></li>
-        <li><a href="/tags">Tags</a></li>
+        <% if(!currentUser) { %>
+          <li><a href="/auth/login" class="btn pull-right btn-default">Login</a></li>
+          <li><a href="/auth/signup" class="btn pull-right btn-default active">Signup</a></li>
+        <% } else { %>
+          <li><a href="/">Home</a></li>
+          <li><a href="/favorites">Favorites</a></li>
+          <li><a href="/tags">Tags</a></li>
+          <li><a href="/auth/logout">Logout</a></li>
+          <li><a class="btn-default disabled"><%= currentUser.name  %></a></li>
+
+        <% }  %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

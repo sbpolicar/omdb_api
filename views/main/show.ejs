@@ -1,22 +1,27 @@
+<% if(!currentUser) { %>
 
-<div class="text-center">
-<a href="/favorites" class="btn btn-info">myFavorites</a>
-<% if(favorite){ %>
-  <button class="btn btn-default disabled">Favorited!</button>
-  <a class="btn btn-info" href="/favorites/<%= favorite.get().imdbId %>/comments">Comment</a>
-<a class="btn btn-warning" href="/favorites/<%= favorite.get().imdbId %>/tags"><b>+ </b>Add a Tag</a>
-<% } else { %>
-<form action="/favorites" method="POST" role="form">
-  <div class="form-group">
-    <input name="title" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Title %>">
-    <input name="id" type="hidden" class="form-control" placeholder="Input field" value="<%= id %>">
-    <input name="poster" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Poster %>">
-    <input name="year" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Year %>">
+<% }else{ %>
+
+  <div class="text-center">
+  <a href="/favorites" class="btn btn-info">myFavorites</a>
+  <% if(favorite){ %>
+    <button class="btn btn-default disabled">Favorited!</button>
+    <a class="btn btn-info" href="/favorites/<%= favorite.get().imdbId %>/comments">Comment</a>
+  <a class="btn btn-warning" href="/favorites/<%= favorite.get().imdbId %>/tags"><b>+ </b>Add a Tag</a>
+  <% } else { %>
+  <form action="/favorites" method="POST" role="form">
+    <div class="form-group">
+      <input name="title" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Title %>">
+      <input name="id" type="hidden" class="form-control" placeholder="Input field" value="<%= id %>">
+      <input name="poster" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Poster %>">
+      <input name="year" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Year %>">
+    </div>
+    <button type="submit" class="btn btn-success">Favorite This</button>
+  </form>
   </div>
-  <button type="submit" class="btn btn-success">Favorite This</button>
-</form>
-</div>
+  <% } %>
 <% } %>
+
 
 
 <div class="text-center">
@@ -145,25 +150,30 @@
   <%  }) %>
 <% } %>
 </div>
-<div class="text-center">
+<% if(!currentUser) { %>
 
-<a href="/favorites" class="btn btn-info">myFavorites</a>
-<% if(favorite){ %>
-  <button class="btn btn-default disabled">Favorited!</button>
-  <a class="btn btn-info" href="/favorites/<%= favorite.get().imdbId %>/comments">Comment</a>
-<a class="btn btn-warning" href="/favorites/<%= favorite.imdbId %>/tags"><b>+ </b>Add a Tag</a>
-<% } else { %>
-<form action="/favorites" method="POST" role="form">
-  <div class="form-group">
-    <input name="title" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Title %>">
-    <input name="id" type="hidden" class="form-control" placeholder="Input field" value="<%= id %>">
-    <input name="poster" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Poster %>">
-    <input name="year" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Year %>">
+<% }else{ %>
+
+  <div class="text-center">
+  <a href="/favorites" class="btn btn-info">myFavorites</a>
+  <% if(favorite){ %>
+    <button class="btn btn-default disabled">Favorited!</button>
+    <a class="btn btn-info" href="/favorites/<%= favorite.get().imdbId %>/comments">Comment</a>
+  <a class="btn btn-warning" href="/favorites/<%= favorite.get().imdbId %>/tags"><b>+ </b>Add a Tag</a>
+  <% } else { %>
+  <form action="/favorites" method="POST" role="form">
+    <div class="form-group">
+      <input name="title" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Title %>">
+      <input name="id" type="hidden" class="form-control" placeholder="Input field" value="<%= id %>">
+      <input name="poster" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Poster %>">
+      <input name="year" type="hidden" class="form-control" placeholder="Input field" value="<%= data.Year %>">
+    </div>
+    <button type="submit" class="btn btn-success">Favorite This</button>
+  </form>
   </div>
-  <button type="submit" class="btn btn-success">Favorite This</button>
-</form>
+  <% } %>
 <% } %>
-</div>
+
 
 
 
