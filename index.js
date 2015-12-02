@@ -8,7 +8,8 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var app = express();
 
-require('express-helpers')(app);
+
+// require('express-helpers')(app);
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
